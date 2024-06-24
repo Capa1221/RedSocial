@@ -1,0 +1,35 @@
+{% extends 'social/layout.html' %}
+
+{% block content %}
+
+<div class="registration-form">
+    <h2>Registro de Usuario</h2>
+    <form class="form" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" id="submit">Registrarse</button>
+    </form>
+    
+    {% if form.errors %}
+        <div class="error-message">
+            <p>Por favor corrige los siguientes errores:</p>
+            <ul>
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+    
+    {% if messages %}
+        {% for message in messages %}
+            <div class="notification {{ message.tags }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
+</div>
+
+{% endblock %}

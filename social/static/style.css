@@ -1,0 +1,379 @@
+/* Estilos globales */
+body {
+  background: #f0f2f5;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Establecer un tamaño base del 62.5% para facilitar el cálculo del rem */
+html {
+  font-size: 62.5%;
+}
+
+/* Estilos para encabezados */
+h1, h2, h5 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #262626;
+}
+
+h2 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  color: #262626;
+}
+
+h5 {
+  font-size: 1.4rem;
+  color: #666;
+}
+
+/* Estilos para párrafos */
+p {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+/* Estilos para botones */
+button {
+  font-size: 1.6rem;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  background: #0095f6;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+/* Estilos para imágenes */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Estilos para enlaces */
+a {
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: #0095f6;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0056b3;
+}
+
+/* Estilos para la barra de navegación principal */
+.main-head {
+  background: #ffffff;
+  color: #262626;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.6rem 0;
+}
+
+nav.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  margin: auto;
+}
+
+nav.main ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+nav.main ul li {
+  margin-right: 2rem;
+}
+
+#logo {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #262626;
+}
+
+/* Estilos para el contenido principal */
+.main {
+  background: #ffffff;
+  width: 95%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+/* Estilos para la segunda barra de navegación */
+.second-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.6rem 2rem;
+  background: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.second-nav .feed, .second-nav .profile, .second-nav .new {
+  flex: 1;
+  text-align: center;
+}
+
+.second-nav .new {
+  text-transform: uppercase;
+  color: #0095f6;
+}
+
+.second-nav .new:hover {
+  color: #0056b3;
+}
+
+/* Estilos para los artículos */
+article {
+  margin-bottom: 4rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.container-article {
+  display: flex;
+  align-items: center;
+}
+
+.container-article img {
+  height: 60px;
+  width: 60px;
+  margin-right: 1.6rem;
+  border-radius: 50%;
+}
+
+.username a {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #262626;
+}
+
+.post {
+  font-size: 1.6rem;
+  color: #333;
+}
+
+/* Estilos para el perfil */
+.profile {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 2rem 0;
+}
+
+.profile img {
+  height: 120px;
+  width: 120px;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+}
+
+.profile h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #262626;
+}
+
+/* Estilos para seguidores / siguiendo / publicaciones */
+.follow {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 1.6rem 0;
+}
+
+.follow div {
+  text-align: center;
+}
+
+.follow h3 {
+  font-size: 2rem;
+  color: #262626;
+}
+
+.follow p {
+  font-size: 1.4rem;
+  color: #666;
+}
+
+/* Estilos para elementos de formulario */
+form {
+  margin: 0;
+  padding: 2rem;
+  font-size: 1.6rem;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input, textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1.6rem;
+  border-radius: 4px;
+  font-size: 1.6rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #0095f6;
+}
+
+button#submit {
+  width: 100%;
+  padding: 1.6rem;
+  text-align: center;
+  background: #0095f6;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button#submit:hover {
+  background: #0056b3;
+}
+
+/* Estilos para notificaciones */
+.notification {
+  text-align: center;
+  padding: 1.6rem 2rem;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+}
+
+.success {
+  background: #43dc7e;
+}
+
+.error {
+  background: #ab3444;
+}
+
+/* Estilos para el pie de página */
+footer {
+  background: #262626;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+footer p {
+  font-size: 1.4rem;
+  opacity: 0.8;
+}
+
+footer p a {
+  color: #0095f6;
+  text-decoration: none;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .main {
+    padding: 1.6rem;
+  }
+  
+  nav.main {
+    width: 100%;
+    padding: 1.6rem;
+  }
+  
+  .second-nav {
+    padding: 1.6rem;
+  }
+  
+  .profile img {
+    height: 100px;
+    width: 100px;
+  }
+  
+  .container-article img {
+    height: 50px;
+    width: 50px;
+    margin-right: 1rem;
+  }
+}
+
+/* Estilos adicionales para centrar y colorear */
+.Sub_Post {
+  text-align: center;
+  color: #0095f6;
+}
+
+/* Estilos para acciones del post */
+.post-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.post-text {
+  flex-grow: 1;
+}
+
+.post-actions {
+  display: flex;
+  align-items: center;
+  margin-top: 8px; /* Ajusta el espacio entre el contenido y los botones */
+}
+
+.post-actions a {
+  margin-right: 16px; /* Espacio entre los iconos */
+  display: inline-block; /* Asegura que los enlaces estén en línea */
+  color: #0095f6;
+}
+
+.post-actions a:hover {
+  text-decoration: underline;
+}
+
+
+button.follow-button {
+  width: 15%;
+  padding: 1.6rem;
+  text-align: center;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #0056b3;
+  transition: none; /* Eliminar cualquier transición */
+}
+
+button.follow-button:hover {
+  background: #0056b3; /* Mantener el color de fondo en hover */
+}
+
+a.Boton {
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+}

@@ -1,0 +1,35 @@
+{% extends 'social/layout.html' %}
+{% load humanize %}
+{% block content %}
+
+{% for post in posts %}
+<article>
+    <div class="container-article">
+        <img src="{{ post.user.profile.image.url }}">
+        <div>
+            <h2 class="username"><a href="{% url 'profile' post.user.username %}">@{{ post.user.username }}</a></h2>
+            <i class="clock"></i>
+            <time data-time="#">{{ post.timestamp|naturaltime }}</time>
+            <div class="post">{{ post.content }}</div>
+        </div>
+    </div>
+
+    {% if request.user == post.user %}
+    <div class="post-actions">
+        <a href="{% url 'edit_post' post.id %}" title="Edit">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 17.25V21H6.75L17.81 9.94L14.06 6.19L3 17.25ZM20.71 7.04C21.1 6.65 21.1 6 20.71 5.61L18.39 3.29C18 2.9 17.35 2.9 16.96 3.29L15.13 5.12L18.88 8.87L20.71 7.04Z" fill="currentColor"/>
+            </svg>
+        </a>
+        <a href="{% url 'delete_post' post.id %}" title="Delete">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 19C6 20.1 6.9 21 8 21H16C17.1 21 18 20.1 18 19V7H6V19ZM19 4H15.5L14.79 3.29C14.4 2.9 13.74 2.9 13.35 3.29L12.5 4H8C7.45 4 7 4.45 7 5C7 5.55 7.45 6 8 6H19C19.55 6 20 5.55 20 5C20 4.45 19.55 4 19 4Z" fill="currentColor"/>
+            </svg>
+        </a>
+    </div>
+    {% endif %}
+
+</article>
+{% endfor %}
+
+{% endblock %}

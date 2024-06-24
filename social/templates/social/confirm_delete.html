@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmar Eliminación</title>
+    <style>
+        /* Estilos globales */
+        body {
+            background: #f0f2f5;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Contenedor principal */
+        .container {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        h2 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #262626;
+            margin-bottom: 1.6rem;
+        }
+
+        p {
+            font-size: 1.6rem;
+            color: #333;
+            margin-bottom: 2rem;
+        }
+
+        /* Botón de confirmación */
+        button {
+            font-size: 1.6rem;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            background: #e02424;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-right: 1rem;
+        }
+
+        button:hover {
+            background: #a81d1d;
+        }
+
+        /* Enlace de cancelación */
+        a {
+            font-size: 1.6rem;
+            color: #0095f6;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>¿Estás seguro de que quieres eliminar esta publicación?</h2>
+        <p>{{ post.content }}</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Sí, eliminar</button>
+        </form>
+        <br>
+        <a href="{% url 'profile' request.user.username %}">Cancelar</a>
+    </div>
+</body>
+</html>

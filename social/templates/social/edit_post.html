@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Publicación</title>
+    <style>
+        /* Estilos globales */
+        body {
+            background: #f0f2f5;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* Contenedor principal */
+        .container {
+            background: #ffffff;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+
+        h2 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #262626;
+            margin-bottom: 1.6rem;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        form p {
+            margin-bottom: 1.6rem;
+            text-align: left;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 1.6rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1.6rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #0095f6;
+            outline: none;
+        }
+
+        button {
+            font-size: 1.6rem;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            background: #0095f6;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 1rem;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        a {
+            font-size: 1.6rem;
+            color: #0095f6;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Editar Publicación</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Guardar cambios</button>
+        </form>
+        <a href="{% url 'profile' request.user.username %}">Cancelar</a>
+    </div>
+</body>
+</html>
