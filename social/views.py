@@ -101,7 +101,7 @@ def edit_post(request, post_id):
         form = PostForm(request.POST, instance=post)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Post updated successfully!')
+            messages.success(request, 'Su cambio a sido exitoso')
             return redirect('profile', username=request.user.username)
     else:
         form = PostForm(instance=post)
@@ -112,6 +112,6 @@ def delete_post(request, post_id):
     post = get_object_or_404(Post, id=post_id, user=request.user)
     if request.method == 'POST':
         post.delete()
-        messages.success(request, 'Post deleted successfully!')
+        messages.success(request, 'Se elimino con exito')
         return redirect('profile', username=request.user.username)
     return render(request, 'social/confirm_delete.html', {'post': post})
